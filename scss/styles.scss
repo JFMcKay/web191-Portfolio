@@ -2,3 +2,21 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 //Add custom code here for bootstrap.
+.hundo {
+    height: 75vh;
+    margin-bottom: 2em;
+}
+
+.card {
+    margin: 1em auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+}
+
+.theme-green {
+    background-color: #7899ad;
+}
+
+.center-this {
+    text-align: center;
+}
