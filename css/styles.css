@@ -4,6 +4,7 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap");
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -11957,9 +11958,61 @@ fieldset:disabled .btn {
   }
 }
 
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+a.download {
+  color: #120202;
+}
+
 .hundo {
-  height: 75vh;
-  margin-bottom: 2em;
+  height: 97vh;
+  padding-bottom: 2em;
+  background-image: url("../images/back.png");
+  background-position: bottom;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.m-center {
+  height: 100%;
+  margin-top: 40vh;
+}
+
+.bi-arrow-down {
+  height: 100%;
+  -webkit-transition: color 0.15s ease-in-out,background-color 0.15s ease-in-out,border-color 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out,background-color 0.15s ease-in-out,border-color 0.15s ease-in-out;
+}
+
+.bi-arrow-down:hover {
+  color: #0059ff;
+}
+
+.top-background {
+  height: 50vh;
+  background-image: url("../images/back.png");
+  background-position: bottom;
+  background-size: cover;
+}
+
+.bottom-background {
+  background-image: url("../images/backbottom.png");
+  background-position: top;
+  background-size: cover;
 }
 
 .card {
@@ -11971,11 +12024,92 @@ fieldset:disabled .btn {
   /* Added */
 }
 
-.theme-green {
-  background-color: #7899ad;
+.card-text {
+  font-size: 300;
+}
+
+.blog-img {
+  background-image: url("../images/firstblog.png");
+  background-position: top;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .center-this {
   text-align: center;
+}
+
+.theme-green {
+  background-color: #cbe8fa;
+}
+
+#projects .col-sm {
+  margin: 0.5em;
+}
+
+.about-contact {
+  background-image: url("../images/backbottom.png");
+  background-position: top;
+  background-size: cover;
+  height: 95vh;
+}
+
+.about {
+  height: 100%;
+  background: url("../images/transparent.png") repeat center top;
+}
+
+nav {
+  font-weight: 700;
+}
+
+h1, .h1, h2, .h2 {
+  font-weight: 900;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+label {
+  padding: 0.4em 0.4em 0.4em 0;
+}
+
+a:link {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* selected link */
+a:active {
+  color: #fff;
+  text-decoration: none;
+}
+
+a.download:link, a.download:visited, a.download:hover, a.download:active {
+  color: #120202;
+}
+
+#btn-back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  font-weight: 900;
+  z-index: 50;
 }
 /*# sourceMappingURL=styles.css.map */

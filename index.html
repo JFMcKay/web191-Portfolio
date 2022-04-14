@@ -4,25 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Jeremy McKay - Web Developer</title>
     <link rel="stylesheet" href="./css/styles.min.css" />
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script defer src="./scripts/scripts.js"></script>
   </head>
   <body>
     <main>
-      <header class="bg-dark navbar-dark">
-        <div class="container">
-          <nav class="navbar navbar-expand-lg p-0">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">Jeremy F McKay</a>
-            </div>
-            <div class="container-fluid d-flex justify-content-end ">
+      <header class="">
+          <nav class=" navbar bg-dark navbar-dark fixed-top navbar-expand-lg p-0">
+            <div class="container-fluid d-flex justify-content-between p-0-sm">
+              <div class="px-2">
+                <a class="navbar-brand" href="#">Jeremy F McKay</a>
+              </div>
               <button
-                class="navbar-toggler"
+                class="navbar-toggler m-2"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarNavDropdown"
@@ -33,136 +34,150 @@
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div
-                class="collapse navbar-collapse justify-content-end "
+                class="collapse navbar-collapse"
                 id="navbarNavDropdown"
               >
-                <ul class="navbar-nav">
+                <ul class="navbar-nav w-100 d-flex justify-content-end">
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#"
                       >Home</a
                     >
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Portfolio</a>
+                    <a class="nav-link" href="#projects">Projects</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">About Me</a>
+                    <a class="nav-link" href="#blog">Blog</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Blog</a>
+                    <a class="nav-link" href="#about">About Me</a>
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link bg-light text-dark">Contact</a>
+                    <a href="mailto:jeremyfmckay@gmail.com.com?subject = Feedback&body = Message" class="nav-link bg-light text-dark">Contact</a>
                   </li>
                 </ul>
               </div>
             </div>
           </nav>
-        </div>
       </header>
+      <button
+        type="button"
+        class="btn btn-danger btn-floating btn-lg rounded-0"
+        id="btn-back-to-top"
+        >
+        ^
+      </button>
       <!-- END OF HEADER -->
-      <div
-        class="hundo d-flex align-content-center justify-content-center flex-wrap"
+      <section
+        class="hundo"
       >
-        <img src="./images/logo.png" alt="" />
-      </div>
-      <!-- END OF MAIN IMAGE -->
-      <div class="theme-green pb-5">
-        <div class="container">
-          <h1 class="p-3 center-this">Project</h1>
-          <div class="row">
-            <div class="col-sm">
-              <div class="card" style="width: 18rem">
-                <img src="./images/logo.png" class="card-img-top" alt="..." />
-                <div class="card-body">
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make up
-                    the bulk of the card's content.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm">
-              <div class="card" style="width: 18rem">
-                <img src="./images/logo.png" class="card-img-top" alt="..." />
-                <div class="card-body">
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make up
-                    the bulk of the card's content.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm">
-              <div class="card" style="width: 18rem">
-                <img src="./images/logo.png" class="card-img-top" alt="..." />
-                <div class="card-body">
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make up
-                    the bulk of the card's content.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm">
-              <div class="card" style="width: 18rem">
-                <img src="./images/logo.png" class="card-img-top" alt="..." />
-                <div class="card-body">
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make up
-                    the bulk of the card's content.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm">
-              <div class="card" style="width: 18rem">
-                <img src="./images/logo.png" class="card-img-top" alt="..." />
-                <div class="card-body">
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make up
-                    the bulk of the card's content.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm ">
-              <div class="card" style="width: 18rem">
-                <img src="./images/logo.png" class="card-img-top" alt="..." />
-                <div class="card-body">
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make up
-                    the bulk of the card's content.
-                  </p>
-                </div>
-              </div>
-            </div>
+        <div class="m-center d-flex flex-column">
+          <img src="./images/logo.png" alt="" />
+          <h3 class="center-this">Web Developer</h3>
+          <div>
+            <!-- <button class="btn bg-light rounded-0">Get My Resume</button>
+            <button class="btn bg-light rounded-0">Something Else</button> -->
           </div>
         </div>
-      </div>
+        <a href="#projects">
+          <svg xmlns="http://www.w3.org/2000/svg" width="92" height="92" fill="currentColor" class="btn bi bi-arrow-down mx-auto" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+          </svg>
+        </a>
+    </section>
+      <!-- END OF MAIN IMAGE -->
+      <section class="theme-green pb-5">
+        <div class="container" id="projects">
+          <h1 class="p-5 center-this">My Projects</h1>
+          <div class="row">
+            <div class="col-sm">
+              <div class="card h-100" style="width: 18rem">
+                <img src="./images/jeremycom.png" class="card-img-top" alt="..." />
+                <div class="card-body d-flex flex-column border-top">
+                  <div class="card-text">
+                    <p>Skills: Javascript, JQuery, HTML, SASS, CSS, Bootstrap, Adobe XD</p>
+                    <p>This is my portfolio site. I created mockups and developed the site using Bootstrap</p>
+                  </div>
+                  <a href="https://www.jeremymckay.com/" target="_blank" class="btn btn-primary mt-auto stretched-link">Check it out</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm">
+              <div class="card h-100" style="width: 18rem">
+                <img src="./images/shirtmondo.png" class="card-img-top" alt="..." />
+                <div class="card-body d-flex flex-column border-top">
+                  <div class="card-text">
+                    <p>Skills: WooCommerce, Wordpress, CSS, SEO optimization, Adobe XD</p>
+                    <p>This is my E-Commerce project. I used Wordpress and WooCommerce to create a site based on mockups I created in Adobe XD.</p>
+                  </div>
+                  <a href="https://www.shirtmondo.com" target="_blank" class="btn btn-primary mt-auto stretched-link">Check it out</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm">
+              <div class="card h-100" style="width: 18rem">
+                <img src="./images/wellness.png" class="card-img-top" alt="..." />
+                <div class="card-body d-flex flex-column border-top">
+                  <div class="card-text">
+                    <p>Skills: Angular, Typsescript, Javascript, HTML, CSS </p>
+                    <p>I created a wellness journal using firebase as the database. It demonstrates CRUD (Create, Read, Update, Delete) operations using Angular.</p>
+                  </div>
+                  <a href="https://www.jeremymckay.com/angular-crud" target="_blank" class="btn btn-primary mt-auto stretched-link">Check it out</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm">
+              <div class="card h-100" style="width: 18rem">
+                <img src="./images/caloriecounter.png" class="card-img-top" alt="..." />
+                <div class="card-body d-flex flex-column border-top">
+                  <div class="card-text">
+                    <p>Skills: React, JSX, Javascript, HTML, CSS </p>
+                    <p>This project is a calorie counter. It keeps a total of calories and allows CRUD (Create, Read, Update, Delete) operations using React.  I use local storage in this project.</p>
+                  </div>
+                  <a href="https://www.jeremymckay.com/cc" target="_blank" class="btn btn-primary mt-auto stretched-link">Check it out</a>
+                </div>
+              </div>
+            </div>
+             <!-- END OF CARD  -->
+             <div class="col-sm">
+              <div class="card h-100" style="width: 18rem">
+                <img src="./images/rockpaperscissors.jpg" class="card-img-top" alt="..." />
+                <div class="card-body d-flex flex-column border-top">
+                  <div class="card-text">
+                    <p>Skills: Javascript, HTML, CSS </p>
+                    <p>This is rock, paper scissors game I created using javascript.</p>
+                  </div>
+                  <a href="https://www.jeremymckay.com/rock-paper-scissors" target="_blank" class="btn btn-primary mt-auto stretched-link">Check it out</a>
+                </div>
+              </div>
+            </div>
+             <!-- END OF CARD  -->
+          </div>
+        </div>
+      </section>
       <!-- END OF PROJECTS -->
-      <div class="">
+      <section id="blog">
         <div class="container pb-5">
-          <h1 class="p-3 center-this">Blog</h1>
+          <h1 class="p-5 center-this">Blog</h1>
             <div class="row">
               <div class="card" style="width: 500px;">
                 <div class="row no-gutters">
-                    <div class="col-sm-5">
-                        <img class="card-img" src="/images/logo.png" alt="Suresh Dasari Card">
+                    <div class="col-sm-5 m-0 p-0">
+                        <div class="blog-img"></div>
                     </div>
                     <div class="col-sm-7">
                         <div class="card-body">
-                            <h5 class="card-title">Suresh Dasari</h5>
-                            <p class="card-text">Suresh Dasari is a founder and technical lead developer in tutlane.</p>
-                            <a href="#" class="btn btn-primary">View Profile</a>
+                            <h5 class="card-title">Day 1</h5>
+                            <p class="card-text">This is the space for my blog. Nothing is posted yet but will be up in the future.</p>
+                            <a href="#blog" class="btn btn-primary disabled">View blog</a>
                         </div>
                     </div>
                 </div>
               </div>
               <!-- end of card -->
-              <div class="card" style="width: 500px;">
+              <!-- <div class="card" style="width: 500px;">
                 <div class="row no-gutters">
                     <div class="col-sm-5">
                         <img class="card-img" src="/images/logo.png" alt="Suresh Dasari Card">
@@ -175,54 +190,62 @@
                         </div>
                     </div>
                 </div>
-              </div>
+              </div> -->
               <!-- end of card -->
             </div>
         </div>
-      </div>
+      </section>
       <!-- END OF BLOG -->
-      <div class="theme-green p-4">
-        <div class="container">
+      <section class="p-4 about-contact">
+        <div class="container" id="about">
           <div class="row no-gutters">
             <div class="col-lg">
-              <div class="card border-0 theme-green " style="width: 100%">
-                <h2 class="center-this">About Me</h2>
-                <img src="./images/headshot.png" class="card-img-top" alt="..." />
+              <div class="card border-0 about" style="width: 100%">
                 <div class="card-body">
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make up
-                    the bulk of the card's content.
-                  </p>
+                  <h2 class="center-this">About Me</h2>
+                  <img src="./images/headshot.png" class="card-img-top" alt="..." />
+                  <hr>
+                  <div class="card-text">
+                    <p>Skills: React, Angular, Wordpress, JSX, Javascript, HTML, SaSS, CSS, PHP, Git </p>
+                    <p>This is me. I have been interested in Web Development for years.  I started at San Diego Continuing Education and received 2 Certificates for their Front End Web Development program.  After that I wanted more so I decided to finish up my Associate of Science Degree in Web Development at San Diego Mesa College and will be graduating by the summer of 2022.</p>
+                    <p><a class="download" href="./assets/mckayResume.pdf" download>Download my resume here.</a></p>
+                  </div>
+
                 </div>
               </div>
             </div>
-            <div class="col-lg">
+            <!-- <div class="col-lg" id="contact">
               <div class="card" style="width: 100%">
-                <h2 class="center-this">Contact</h2>
                 <div class="card-body">
-                  <form action="" class="card-text">
+                  <h2 class="center-this">Contact</h2>
+                  <form class="card-text" id="js-form">
                     <div class="form-group">
                       <label for="name">Name:</label>
-                      <input type="text" class="form-control" placeholder="name">
+                      <input type="text" class="form-control" id="name" placeholder="name" required>
                       <label for="email">Email:</label>
-                      <input type="email" class="form-control" placeholder="email@this.com">
-                      <label for="message">Message"</label>
-                      <textarea name="message" class="form-control" id="message" cols="30" rows="10"></textarea>
+                      <input type="email" class="form-control" id="email "placeholder="email@this.com" required>
+                      <label for="name">Phone:</label>
+                      <input type="text" class="form-control" id="phone" placeholder="888 888 8888">
+                      <label for="message">Message:</label>
+                      <textarea name="message" class="form-control" id="message" cols="30" rows="10" required></textarea>
                     </div>
-                    <button class="btn btn-lg theme-green m-2">Send</button>
+                    <button onclick="handleSubmit()" class="send btn btn-lg theme-green m-2">Send</button>
                   </form>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
-      </div>
+      </section>
       <!-- END OF ABOUT ME -->
       <footer class="bg-dark navbar-dark">
         <div class="container">
           <nav class="navbar navbar-expand-lg p-3">
             <div class="container-fluid">
               <a class="navbar-brand" href="#">Jeremy F McKay</a>
+              <a href="mailto:jeremyfmckay@gmail.com.com?subject = Feedback&body = Message">
+                Email Me
+                </a>
             </div>
           </nav>
         </div>
