@@ -12015,6 +12015,10 @@ a.download {
   background-size: cover;
 }
 
+#projects .card {
+  width: 20rem;
+}
+
 .card {
   margin: 1em auto;
   /* Added */
@@ -12052,16 +12056,24 @@ a.download {
   background-image: url("../images/backbottom.png");
   background-position: top;
   background-size: cover;
-  height: 95vh;
 }
 
 .about {
-  height: 100%;
+  max-width: 900px;
   background: url("../images/transparent.png") repeat center top;
+}
+
+#contact .card {
+  display: contents;
 }
 
 nav {
   font-weight: 700;
+}
+
+.social-media {
+  width: 30px;
+  margin-right: .5em;
 }
 
 h1, .h1, h2, .h2 {
@@ -12105,11 +12117,51 @@ a.download:link, a.download:visited, a.download:hover, a.download:active {
 }
 
 #btn-back-to-top {
+  display: none;
   position: fixed;
   bottom: 20px;
   right: 20px;
-  display: none;
   font-weight: 900;
   z-index: 50;
+}
+
+.fade-in {
+  opacity: 1;
+  -webkit-animation-name: fadeInOpacity;
+          animation-name: fadeInOpacity;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+@-webkit-keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+form span {
+  color: red;
+}
+
+.thanks {
+  font-size: 1.5em;
+  font-weight: bold;
+  display: none;
 }
 /*# sourceMappingURL=styles.css.map */
