@@ -22,22 +22,36 @@ const backToTop = () => {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
-
+// function ValidateEmail(mail) {
+// //   let errorarea = mail + "_error";
+//   if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
+//   {
+//     return (true)
+//   }
+//     document.getElementById(errorarea).innerHTML = 'Please enter a proper ' + mail + 'like jj@gmail.com';
+//     return (false)
+// }
+// Validate form and make sure there is information in the fields
 const validateMe = () => {
   // Variables for better readability
   let formLength = document.forms[0].elements.length;
   for (var i=0;i<formLength;i++){
       let errorarea = document.forms[0].elements[i].name + "_error";
       let msg = document.forms[0].elements[i].name;
+      if(msg == 'email') {
+        //Checks if email format is correct
+        if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.forms[0].elements[i].value)) {
+          document.getElementById(errorarea).innerHTML = 'Please enter a proper ' + msg + ' like jj@gmail.com';
+          return false;
+          }
+        }
           if (document.forms[0].elements[i].value == ''){
               document.getElementById(errorarea).innerHTML = 'Please enter your ' + msg;
               // moved to css
               // document.getElementById(errorarea).style.color = '#ff0000'; 
               document.forms[0].elements[i].focus();
               return false;
-          }
-          else 
-          {
+          } else {
               document.getElementById(errorarea).innerHTML= '';      
           }
           // Checks for checkbox or radio elements and loops through them to validate.
@@ -85,3 +99,31 @@ const validateMe = () => {
       console.log("There are missing fields");
     }
   });
+
+  // CODE TO FORMAT PHONE
+function formatPhoneNumber(value) {
+  if (!value) return value;
+  const phoneNumber = value.replace(/[^\d]/g, '');
+  const phoneNumberLength = phoneNumber.length;
+  if (phoneNumberLength < 4) return phoneNumber;
+  if (phoneNumberLength < 7) {
+    return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`;
+  }
+  return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(
+    3,
+    6
+    // mathmatically sounds weird but the return truncates the last number when using
+    // event listener
+  )}-${phoneNumber.slice(6, 10)}`;
+}
+// Add event listener for formatting
+const inputField = document.getElementById('phone');
+
+console.log(inputField);
+inputField.addEventListener("input", 
+function (event) {
+  event.preventDefault();
+  console.log("key pressed");
+  const formattedInputValue = formatPhoneNumber(inputField.value);
+  inputField.value = formattedInputValue;
+});
