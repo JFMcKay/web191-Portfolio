@@ -22,16 +22,8 @@ const backToTop = () => {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
-// function ValidateEmail(mail) {
-// //   let errorarea = mail + "_error";
-//   if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
-//   {
-//     return (true)
-//   }
-//     document.getElementById(errorarea).innerHTML = 'Please enter a proper ' + mail + 'like jj@gmail.com';
-//     return (false)
-// }
-// Validate form and make sure there is information in the fields
+
+//Validate function
 const validateMe = () => {
   // Variables for better readability
   let formLength = document.forms[0].elements.length;
