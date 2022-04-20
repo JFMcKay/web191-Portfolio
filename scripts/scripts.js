@@ -3,14 +3,16 @@
 const selectElement = selector => {
   const element = document.querySelector(selector);
   if(element) return element;
-  throw new Error(`Something wen wrong, makesure that ${selector} exists or is typed correctly.`);
+  throw new Error(`${selector} doesn't exist.`);
 }
 
 // removes active class from all active classes.
-const removeClassActive = () => {
-
-  let activeEl = selectElement(".active");
-  activeEl.classList.remove("active");
+const removeClass = (selector) => {
+  let activeEl = selectElement(selector);
+  // Could pass a variable but you need to remove the . in the .active using substring 
+  let fixedClass = selector.substring(1);
+  console.log(selector + " changed to " + fixedClass);
+  activeEl.classList.remove(fixedClass);
 }
 // selected elements
 const navHome = selectElement(".nav-home");
@@ -29,29 +31,29 @@ window.onscroll = () => {
 };
 
 const scrollFunction = () => {
+  // Code to set if the screen is scrolled from the top
   if (
     document.body.scrollTop > 20 ||
     document.documentElement.scrollTop > 20
   ) {
     mybutton.style.display = "block";
     if (inViewPort(projects)) {
-      removeClassActive(".active");
+      removeClass(".active");
       navProj.classList.add("active");
     } else {
       if (inViewPort(blog)) {
-        removeClassActive(".active");
+        removeClass(".active");
         navBlog.classList.add("active");
       } else {
         if (inViewPort(about)) {
-          removeClassActive(".active");
+          removeClass(".active");
           navAbout.classList.add("active")
         }
       }
     } 
-
+  // code to set when back at the top.
   } else {
-    let activeEl = selectElement(".active");
-    activeEl.classList.remove("active");
+    removeClass(".active");
     navHome.classList.add("active");
     mybutton.style.display = "none";
   }
@@ -170,10 +172,3 @@ function inViewPort(elem) {
   );
 };
 
-function activeCheck() {
-  if (inViewPort(blog)) {
-    console.log('it is in viewport');
-  } else {
-    console.log('it is not in viewport');
-  } 
-}
