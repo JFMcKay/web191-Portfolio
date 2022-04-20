@@ -1,4 +1,27 @@
-let mybutton = document.getElementById("btn-back-to-top");
+// Element selector helper written after all the code will update as I get the chance.
+
+const selectElement = selector => {
+  const element = document.querySelector(selector);
+  if(element) return element;
+  throw new Error(`Something wen wrong, makesure that ${selector} exists or is typed correctly.`);
+}
+
+// removes active class from all active classes.
+const removeClassActive = () => {
+
+  let activeEl = selectElement(".active");
+  activeEl.classList.remove("active");
+}
+// selected elements
+const navHome = selectElement(".nav-home");
+const navProj = selectElement(".nav-proj");
+const navBlog = selectElement(".nav-blog");
+const navAbout = selectElement(".nav-about");
+const navItem = selectElement(".nav-item");
+const projects = selectElement("#projects");
+const blog = selectElement("#blog");
+const about = selectElement("#about-contact");
+const mybutton = selectElement("#btn-back-to-top");
 
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = () => {
@@ -10,8 +33,26 @@ const scrollFunction = () => {
     document.body.scrollTop > 20 ||
     document.documentElement.scrollTop > 20
   ) {
-    mybutton.style.display = "block";   
+    mybutton.style.display = "block";
+    if (inViewPort(projects)) {
+      removeClassActive(".active");
+      navProj.classList.add("active");
+    } else {
+      if (inViewPort(blog)) {
+        removeClassActive(".active");
+        navBlog.classList.add("active");
+      } else {
+        if (inViewPort(about)) {
+          removeClassActive(".active");
+          navAbout.classList.add("active")
+        }
+      }
+    } 
+
   } else {
+    let activeEl = selectElement(".active");
+    activeEl.classList.remove("active");
+    navHome.classList.add("active");
     mybutton.style.display = "none";
   }
 }
@@ -21,6 +62,7 @@ mybutton.addEventListener("click",() => backToTop());
 const backToTop = () => {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
+  
 }
 
 //Validate function
@@ -109,13 +151,29 @@ function formatPhoneNumber(value) {
   )}-${phoneNumber.slice(6, 10)}`;
 }
 // Add event listener for formatting
-const inputField = document.getElementById('phone');
-
-console.log(inputField);
+const inputField = selectElement('#phone');
 inputField.addEventListener("input", 
 function (event) {
   event.preventDefault();
-  console.log("key pressed");
   const formattedInputValue = formatPhoneNumber(inputField.value);
   inputField.value = formattedInputValue;
 });
+
+// code to test what ID's are in the viewport to set active points in the menu.
+function inViewPort(elem) {
+  let bounding = elem.getBoundingClientRect();
+  return (
+    bounding.top >= 0 && 
+    bounding.left >= 0 && 
+    bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) && 
+    bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+};
+
+function activeCheck() {
+  if (inViewPort(blog)) {
+    console.log('it is in viewport');
+  } else {
+    console.log('it is not in viewport');
+  } 
+}

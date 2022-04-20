@@ -16,13 +16,13 @@
     <script defer src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script defer src="./scripts/scripts.js"></script>
   </head>
-  <body>
+  <body data-spy="scroll">
     <main>
       <header class="">
-          <nav class=" navbar bg-dark navbar-dark fixed-top navbar-expand-lg p-0">
+          <nav class="navbar bg-dark navbar-dark fixed-top navbar-expand-lg p-0">
             <div class="container-fluid d-flex justify-content-between p-0-sm">
               <div class="px-2">
-                <a class="navbar-brand" href="#">Jeremy F McKay</a>
+                <a class="navbar-brand" id="#home" href="#">Jeremy F McKay</a>
               </div>
               <div class="d-flex">
                 <div class="social-media"><a href="https://www.linkedin.com/in/jeremy-f-mckay/" target="_blank"><img src="./images/linkedin-icon.png" alt="Codepen"></a></div>
@@ -41,26 +41,26 @@
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div
-                class="collapse navbar-collapse h-100"
+                class="collapse navbar-collapse h-100" id="#scrollspy-nav"
                 id="navbarNavDropdown"
               >
-                <ul class="navbar-nav w-100 d-flex justify-content-end">
+                <ul class="navbar-nav w-100 d-flex justify-content-end ">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#"
+                    <a class="nav-link active nav-home" aria-current="page" href="#"
                       >Home</a
                     >
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#projects">Projects</a>
+                    <a class="nav-link nav-proj" href="#projects">Projects</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#blog">Blog</a>
+                    <a class="nav-link nav-blog" href="#blog">Blog</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#about-contact">About Me</a>
+                    <a class="nav-link nav-about" href="#about-contact">About Me</a>
                   </li>
                   <li class="nav-item">
-                    <a href="#contact" class="nav-link bg-light text-dark ">Contact</a>
+                    <a href="#contact" class="nav-link nav-contact bg-light text-dark ">Contact</a>
                   </li>
                 </ul>
               </div>
@@ -134,7 +134,7 @@
               </div>
             </div>
           </div>
-          <div class="row">
+          <div class="row" id="projects">
             <div class="col-sm">
               <div class="card h-100">
                 <img src="./images/caloriecounter.png" class="card-img-top" alt="..." />
